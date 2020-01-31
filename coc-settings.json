@@ -1,0 +1,24 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "typescript"],
+  "python.linting.flake8Enabled": true,
+  "python.jediPath": "~/.local/lib/python3.7/site-packages",
+  "coc.preferences.formatOnSaveFiletypes": ["go", "typescript", "javascript", "json"],
+  "yaml.schemas": {
+    "http://json.schemastore.org/composer": "/*",
+    "kubernetes": [
+      "/*kube*.yaml",
+      "/*deployment.yaml",
+      "/*service.yaml",
+      "/*configMap.yaml",
+      "/*configmap.yaml",
+      "/*secret.yaml",
+      "/*secrets.yaml",
+      "/*managedcert.yaml",
+      "/*redis.yaml",
+      "/*app.yaml",
+      "/*nginx.yaml",
+      "/*ingress.yaml"
+    ]
+  }
+}
