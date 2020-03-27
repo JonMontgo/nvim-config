@@ -21,8 +21,11 @@ Plug 'git@github.com:tmhedberg/SimpylFold.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dylanaraps/wal.vim'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " #### Coc settings
@@ -53,11 +56,19 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"if has('patch8.1.1068')
+  "" Use `complete_info` if your (Neo)Vim version supports it.
+  "inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+"else
+  "imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"endif
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -77,10 +88,17 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 " end Coc #####
 
 " Setup clipboard support
 set clipboard=unnamedplus
+
+" Setup colorscheme
+colorscheme wal
 
 " Ensure syntax highlighting
 syntax on
@@ -146,23 +164,3 @@ nnoremap <C-H> <C-W><C-H>
 " Tab next and previous
 map <C-PageUp> :tabn<CR>
 map <C-PageDown> :tabp<CR>
-
-" Ale specific config
-let g:ale_linters ={
-\  'python': ['flake8'],
-\  'javascript': ['eslint', 'tslint'],
-\  'typescript': ['tslint']
-\}
-let g:ale_fixers={
-\   'javascript': ['prettier','eslint'],
-\   'typescript': ['prettier', 'tslint']
-\}
-
-" You complete me settings
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-"let g:ycm_semantic_triggers = {
-"\  'python': ['re!\w{2}'],
-"\  'javascript': ['re!\w{2}'],
-"\  'typescript': ['re!\w{2}']
-"\}
-"let g:ycm_autoclose_preview_window_after_insertion = 0
