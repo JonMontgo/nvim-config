@@ -26,6 +26,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dylanaraps/wal.vim'
 Plug 'cespare/vim-toml'
+Plug 'tpope/vim-fugitive'
+Plug 'evanleck/vim-svelte'
 call plug#end()
 
 " #### Coc settings
