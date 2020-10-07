@@ -3,8 +3,9 @@
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "flake8",
-  "python.jediPath": "~/.local/lib/python3.7/site-packages",
+  "python.jediPath": "~/.local/lib/python3.8/site-packages",
   "coc.preferences.formatOnSaveFiletypes": ["go", "typescript", "javascript", "json"],
+  "tailwindCSS.headwind.runOnSave": false,
   "yaml.schemas": {
     "http://json.schemastore.org/composer": "/*",
     "kubernetes": [

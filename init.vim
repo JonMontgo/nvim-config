@@ -4,12 +4,22 @@
 
 " PluginInstall installs plugins
 call plug#begin('~/.config/nvim/bundle')
+
+" FZF
 Plug 'git@github.com:junegunn/fzf.vim.git'
 Plug 'git@github.com:junegunn/fzf.git'
-Plug 'git@github.com:scrooloose/nerdtree.git'
+
+" Nerd tree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" JS/TS/JSX
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'yuezk/vim-js'
 Plug 'posva/vim-vue'
+Plug 'HerringtonDarkholme/yats.vim'
+
+" ETC
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
 Plug 'git@github.com:tpope/vim-surround.git'
 Plug 'git@github.com:airblade/vim-gitgutter.git'
@@ -19,20 +29,18 @@ Plug 'git@github.com:Vimjas/vim-python-pep8-indent.git'
 Plug 'git@github.com:tmhedberg/SimpylFold.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Colors
-Plug 'dylanaraps/wal.vim'
-Plug 'arcticicestudio/nord-vim'
-
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-fugitive'
 Plug 'evanleck/vim-svelte'
-Plug 'ryanoasis/vim-devicons'
 Plug 'godlygeek/tabular'
+
+" AESTHETICS
+Plug 'dylanaraps/wal.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
 " #### Coc settings
@@ -244,6 +252,19 @@ set background=dark
 
 " Nerd tree config
 nmap <C-\> :NERDTreeToggle<CR>
+" let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+\  'Modified'  :'✹',
+\  'Staged'    :'✚',
+\  'Untracked' :'✭',
+\  'Renamed'   :'➜',
+\  'Unmerged'  :'═',
+\  'Deleted'   :'✖',
+\  'Dirty'     :'✗',
+\  'Ignored'   :'☒',
+\  'Clean'     :'✔︎',
+\  'Unknown'   :'?',
+\}
 
 " Fuzzy file
 let g:fzf_action={
