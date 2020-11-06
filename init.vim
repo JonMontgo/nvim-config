@@ -19,6 +19,9 @@ Plug 'yuezk/vim-js'
 Plug 'posva/vim-vue'
 Plug 'HerringtonDarkholme/yats.vim'
 
+" MJML
+Plug 'amadeus/vim-mjml'
+
 " ETC
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
 Plug 'git@github.com:tpope/vim-surround.git'
