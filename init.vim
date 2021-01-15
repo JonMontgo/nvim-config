@@ -275,6 +275,8 @@ let g:fzf_action={
 \  'ctrl-i': 'split',
 \  'ctrl-s': 'vsplit'
 \}
+map <leader>ff :Files<CR>
+map <leader>sff :Files src<CR>
 
 " Easy Split Movements
 nnoremap <C-J> <C-W><C-J>
