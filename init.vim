@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/bundle')
 
 " FZF
 Plug 'git@github.com:junegunn/fzf.vim.git'
-Plug 'git@github.com:junegunn/fzf.git'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Nerd tree
 Plug 'preservim/nerdtree'
@@ -21,6 +21,9 @@ Plug 'HerringtonDarkholme/yats.vim'
 
 " MJML
 Plug 'amadeus/vim-mjml'
+
+" Get mo' bettah
+Plug 'ThePrimeagen/vim-be-good'
 
 " ETC
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
