@@ -22,9 +22,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 " MJML
 Plug 'amadeus/vim-mjml'
 
-" Get mo' bettah
-Plug 'ThePrimeagen/vim-be-good'
-
 " ETC
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
 Plug 'git@github.com:tpope/vim-surround.git'
