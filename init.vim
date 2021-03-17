@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/bundle')
 
 " FZF
 Plug 'git@github.com:junegunn/fzf.vim.git'
-Plug 'git@github.com:junegunn/fzf.git'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Nerd tree
 Plug 'preservim/nerdtree'
