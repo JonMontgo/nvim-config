@@ -1,10 +1,20 @@
 {
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "flake8",
   "python.jediPath": "~/.local/lib/python3.8/site-packages",
-  "coc.preferences.formatOnSaveFiletypes": ["go", "typescript", "javascript", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "typescript",
+    "javascript",
+    "json"
+  ],
   "tailwindCSS.headwind.runOnSave": false,
   "yaml.schemas": {
     "http://json.schemastore.org/composer": "/*",
