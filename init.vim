@@ -19,6 +19,12 @@ Plug 'yuezk/vim-js'
 Plug 'posva/vim-vue'
 Plug 'HerringtonDarkholme/yats.vim'
 
+" GoLang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Solidity
+Plug 'tomlion/vim-solidity'
+
 " MJML
 Plug 'amadeus/vim-mjml'
 
@@ -254,7 +260,7 @@ set laststatus=2
 set background=dark
 
 " Nerd tree config
-nmap <C-\> :NERDTreeToggle<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
 " let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
 \  'Modified'  :'✹',
@@ -285,5 +291,5 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Tab next and previous
-map <C-PageUp> :tabn<CR>
-map <C-PageDown> :tabp<CR>
+map <leader>j :tabn<CR>
+map <leader>k :tabp<CR>

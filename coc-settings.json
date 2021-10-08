@@ -8,7 +8,7 @@
   ],
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "flake8",
-  "python.jediPath": "~/.local/lib/python3.8/site-packages",
+  "python.pythonPath": "/usr/bin/python3.9",
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "typescript",
@@ -32,5 +32,14 @@
       "/*nginx.yaml",
       "/*ingress.yaml"
     ]
+  },
+  "languageserver": {
+    "solidity": {
+      "command": "/home/jonathan/Downloads/solc-linux64",
+      "args": ["--lsp"],
+      "trace.server": "verbose",
+      "rootPatterns": [".git/"],
+      "filetypes": ["solidity", "sol"]
+    }
   }
 }
