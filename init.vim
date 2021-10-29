@@ -32,7 +32,7 @@ Plug 'amadeus/vim-mjml'
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
 Plug 'git@github.com:tpope/vim-surround.git'
 Plug 'git@github.com:airblade/vim-gitgutter.git'
-Plug 'git@github.com:scrooloose/nerdcommenter.git'
+Plug 'tpope/vim-commentary'
 Plug 'git@github.com:wesQ3/vim-windowswap.git'
 Plug 'git@github.com:Vimjas/vim-python-pep8-indent.git'
 Plug 'git@github.com:tmhedberg/SimpylFold.git'
@@ -51,6 +51,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
+filetype plugin on
 
 " #### Coc settings
 "
@@ -222,6 +224,7 @@ set splitbelow
 set splitright
 
 " Set line numbers
+set relativenumber
 set number
 
 " Tab/spacing settings
