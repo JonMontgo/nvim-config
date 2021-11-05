@@ -1,7 +1,3 @@
-"set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"let &packpath = &runtimepath
-"source ~/.vimrc
-
 " PluginInstall installs plugins
 call plug#begin('~/.config/nvim/bundle')
 
@@ -13,11 +9,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" JS/TS/JSX
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'yuezk/vim-js'
-Plug 'posva/vim-vue'
-Plug 'HerringtonDarkholme/yats.vim'
+" Global Syntax Highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 " GoLang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -37,8 +31,9 @@ Plug 'git@github.com:wesQ3/vim-windowswap.git'
 Plug 'git@github.com:Vimjas/vim-python-pep8-indent.git'
 Plug 'git@github.com:tmhedberg/SimpylFold.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go'
-Plug 'cespare/vim-toml'
+Plug 'github/copilot.vim'
+" Plug 'fatih/vim-go'
+" Plug 'cespare/vim-toml'
 Plug 'tpope/vim-fugitive'
 Plug 'evanleck/vim-svelte'
 Plug 'godlygeek/tabular'
@@ -47,12 +42,27 @@ Plug 'godlygeek/tabular'
 Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 filetype plugin on
+
+" Tree Sitter Config
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = { 
+    enable = true 
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " #### Coc settings
 "
@@ -216,6 +226,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" Lualine
+lua require('lualine').setup()
+
 " Ensure syntax highlighting
 syntax on
 
@@ -236,27 +249,15 @@ set tabstop=4 " Tab characters are interpreted as 4 spaces
 
 " Set line length guide (80 chars)
 set colorcolumn=80
-" Solarized theme specific
-" highlight ColorColumn ctermbg=8 
 
-" Airline
-let g:airline_powerline_fonts = 1
-" let g:airline_theme='kolor'
-
-" Let's get powerline
-" set rtp+=$VIM_POWER_BINDING
+" Spelling selection
+" setlocal spell spelllang=en_US
 
 " Folding settings
-set foldmethod=syntax "syntax highlighting items specify the folds
+" set foldmethod=syntax "syntax highlighting items specify the folds
 set foldcolumn=2 "defines 1 col at window left to indicate folding
 set foldlevelstart=99 "start file with all folds open
 
-" Vim-Javascript config
-let g:javascript_plugin_jsdoc = 1
-augroup javascript_folding
-    au!
-    au FileType javascript setlocal foldmethod=syntax
-augroup END
 
 " Right solarized foreground colors and always show status bar
 set laststatus=2
