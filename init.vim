@@ -227,7 +227,19 @@ if (has("termguicolors"))
 endif
 
 " Lualine
-lua require('lualine').setup()
+lua << END
+require('lualine').setup {
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 1, -- Just patch this so that I get relative paths instead name
+
+      }
+    }
+  }
+}
+END
 
 " Ensure syntax highlighting
 syntax on

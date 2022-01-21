@@ -13,6 +13,8 @@
     "go",
     "typescript",
     "javascript",
+    "javascriptreact",
+    "typescriptreact",
     "json"
   ],
   "tailwindCSS.headwind.runOnSave": false,
