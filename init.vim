@@ -28,7 +28,7 @@ Plug 'git@github.com:tpope/vim-surround.git'
 Plug 'git@github.com:airblade/vim-gitgutter.git'
 Plug 'tpope/vim-commentary'
 Plug 'git@github.com:wesQ3/vim-windowswap.git'
-Plug 'git@github.com:Vimjas/vim-python-pep8-indent.git'
+" Plug 'git@github.com:Vimjas/vim-python-pep8-indent.git'
 Plug 'git@github.com:tmhedberg/SimpylFold.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
@@ -43,8 +43,6 @@ Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lualine/lualine.nvim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 

@@ -6,18 +6,61 @@
     "typescriptreact",
     "javascriptreact"
   ],
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "flake8",
-  "python.pythonPath": "/usr/bin/python3.9",
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "typescript",
     "javascript",
+    "python",
     "javascriptreact",
     "typescriptreact",
     "json"
   ],
   "tailwindCSS.headwind.runOnSave": false,
+  "tailwindCSS.cssLanguages": [
+    "css",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "stylus",
+    "vue",
+    "svelte"
+  ],
+  "tailwindCSS.jsLanguages": [
+    "javascript",
+    "javascriptreact",
+    "reason",
+    "typescriptreact",
+    "svelte"
+  ],
+  "tailwindCSS.htmlLanguages": [
+    "blade",
+    "edge",
+    "eelixir",
+    "ejs",
+    "elixir",
+    "elm",
+    "erb",
+    "eruby",
+    "haml",
+    "handlebars",
+    "htmldjango",
+    "html",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "html.twig",
+    "jade",
+    "leaf",
+    "markdown",
+    "njk",
+    "nunjucks",
+    "php",
+    "razor",
+    "slim",
+    "svelte",
+    "twig",
+    "vue"
+  ],
   "yaml.schemas": {
     "http://json.schemastore.org/composer": "/*",
     "kubernetes": [
@@ -43,5 +86,8 @@
       "rootPatterns": [".git/"],
       "filetypes": ["solidity", "sol"]
     }
-  }
+  },
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.css.enable": false,
+  "python.pythonPath": "python3"
 }
