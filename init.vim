@@ -35,8 +35,9 @@ Plug 'evanleck/vim-svelte'
 Plug 'godlygeek/tabular'
 
 " AESTHETICS
-Plug 'dylanaraps/wal.vim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'dylanaraps/wal.vim'
+" Plug 'arcticicestudio/nord-vim'
+Plug 'shaunsingh/nord.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -230,6 +231,9 @@ endif
 " Lualine
 lua << END
 require('lualine').setup {
+  options = {
+    theme = 'nord'
+  },
   sections = {
     lualine_c = {
       {
