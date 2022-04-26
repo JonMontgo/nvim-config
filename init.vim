@@ -22,6 +22,9 @@ Plug 'tomlion/vim-solidity'
 " MJML
 Plug 'amadeus/vim-mjml'
 
+" Terraform 
+Plug 'hashivim/vim-terraform'
+
 " ETC
 Plug 'git@github.com:jiangmiao/auto-pairs.git' 
 Plug 'git@github.com:tpope/vim-surround.git'
@@ -35,8 +38,6 @@ Plug 'evanleck/vim-svelte'
 Plug 'godlygeek/tabular'
 
 " AESTHETICS
-" Plug 'dylanaraps/wal.vim'
-" Plug 'arcticicestudio/nord-vim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lualine/lualine.nvim'
@@ -200,10 +201,10 @@ require('lspconfig').efm.setup {
     rootMarkets = {".git/"},
     languages = {
       python = {
-        {
-          formatCommand = "black --quiet -",
-          formatStdin = true
-        },
+        --{
+          --formatCommand = "black --quiet -",
+          --formatStdin = true
+        --},
         {
           formatCommand = "isort --quiet -",
           formatStdin = true
@@ -275,8 +276,8 @@ set shiftwidth=2 " When indentation is filled in use 2 spaces
 set tabstop=4 " Tab characters are interpreted as 4 spaces
 " set smartindent
 
-" Set line length guide (80 chars)
-set colorcolumn=80
+" Set line length guide (88 chars for black)
+set colorcolumn=88
 
 " Spelling selection
 " setlocal spell spelllang=en_US
