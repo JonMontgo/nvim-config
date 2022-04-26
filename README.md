@@ -8,6 +8,10 @@ autocompletion and linting image
 Before installing the config scripts you should already have 
 [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) installed.
 
+### Lsp Installation
+
+
+#### Plug Installation
 You also need to install [plug](https://github.com/junegunn/vim-plug). This 
 will be your plugin manager in nvim.
 ```sh
@@ -15,6 +19,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+#### This Config Installation
 Finally to install the config use
 ```sh
 mkdir -p ~/.config/nvim
