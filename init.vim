@@ -324,5 +324,5 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Tab next and previous
-map <leader>j :tabn<CR>
-map <leader>k :tabp<CR>
+map <leader>l :tabn<CR>
+map <leader>h :tabp<CR>
