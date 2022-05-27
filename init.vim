@@ -64,7 +64,7 @@ filetype plugin on
 set completeopt=menu,menuone,noselect
 
 " Buffer formatting
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
@@ -176,7 +176,15 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'svelte', 'tailwindcss', 'golangci_lint_ls', 'emmet_ls', 'pyright' }
+local servers = { 
+  'tsserver', 
+  'svelte', 
+  'denols', 
+  'tailwindcss', 
+  'golangci_lint_ls', 
+  'emmet_ls', 
+  'pyright' 
+}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -200,10 +208,10 @@ require('lspconfig').efm.setup {
     rootMarkets = {".git/"},
     languages = {
       python = {
-        --{
-          --formatCommand = "black --quiet -",
-          --formatStdin = true
-        --},
+        {
+          formatCommand = "black --quiet -",
+          formatStdin = true
+        },
         {
           formatCommand = "isort --quiet -",
           formatStdin = true
