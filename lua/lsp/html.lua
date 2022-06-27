@@ -1,4 +1,4 @@
-common = require('lsp/common')
+local common = require('lsp/common')
 
 require('lspconfig')['tailwindcss'].setup{
   on_attach = common.on_attach,

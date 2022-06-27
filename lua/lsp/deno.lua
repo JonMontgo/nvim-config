@@ -1,4 +1,4 @@
-common = require('lsp/common')
+local common = require('lsp/common')
 
 require('lspconfig')['denols'].setup{
   on_attach = common.on_attach,
