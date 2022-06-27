@@ -5,6 +5,10 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'git@github.com:junegunn/fzf.vim.git'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Nerd tree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -30,7 +34,6 @@ Plug 'git@github.com:jiangmiao/auto-pairs.git'
 Plug 'git@github.com:tpope/vim-surround.git'
 Plug 'tpope/vim-commentary'
 Plug 'git@github.com:wesQ3/vim-windowswap.git'
-Plug 'github/copilot.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'evanleck/vim-svelte'
 Plug 'godlygeek/tabular'
@@ -238,10 +241,14 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
 " Setup clipboard support
+
 set clipboard=unnamedplus
 
 " Setup colorscheme
-colorscheme nord
+lua <<EOF
+vim.g.nord_disable_background = true
+require('nord').set()
+EOF
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -295,8 +302,8 @@ set foldlevelstart=99 "start file with all folds open
 
 
 " Right solarized foreground colors and always show status bar
-set laststatus=2
-set background=dark
+" set laststatus=2
+" set background=dark
 
 " Nerd tree config
 nmap <leader>nt :NERDTreeToggle<CR>
