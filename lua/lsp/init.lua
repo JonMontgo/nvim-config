@@ -9,3 +9,5 @@ require('lsp/terraform')
 require('lsp/typescript')
 require('lsp/deno')
 require('lsp/golang')
+
+require('lsp/saga')

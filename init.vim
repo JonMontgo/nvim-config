@@ -53,6 +53,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'folke/lsp-colors.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
