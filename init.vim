@@ -23,9 +23,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Solidity
 Plug 'tomlion/vim-solidity'
 
-" MJML
-Plug 'amadeus/vim-mjml'
-
 " Terraform 
 Plug 'hashivim/vim-terraform'
 
@@ -45,6 +42,7 @@ Plug 'godlygeek/tabular'
 Plug 'shaunsingh/nord.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -53,7 +51,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-"
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'folke/lsp-colors.nvim'
+
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -68,6 +68,7 @@ filetype plugin on
 " Lua imports here
 :lua require('lsp')
 :lua require('terminal')
+:lua require('indent-guide')
 
 
 " Tree Sitter Config
@@ -93,9 +94,9 @@ lua <<EOF
 vim.g.nord_disable_background = true
 require('nord').set()
 EOF
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
 " Lualine
 lua << END
