@@ -9,9 +9,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Nerd tree
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Nvim tree
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Global Syntax Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -54,6 +54,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'folke/lsp-colors.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'williamboman/nvim-lsp-installer'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
@@ -70,6 +71,7 @@ filetype plugin on
 :lua require('lsp')
 :lua require('terminal')
 :lua require('indent-guide')
+:lua require('files')
 
 
 " Tree Sitter Config
@@ -150,22 +152,6 @@ set foldlevelstart=99 "start file with all folds open
 " Right solarized foreground colors and always show status bar
 " set laststatus=2
 " set background=dark
-
-" Nerd tree config
-nmap <leader>nt :NERDTreeToggle<CR>
-" let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-\  'Modified'  :'✹',
-\  'Staged'    :'✚',
-\  'Untracked' :'✭',
-\  'Renamed'   :'➜',
-\  'Unmerged'  :'═',
-\  'Deleted'   :'✖',
-\  'Dirty'     :'✗',
-\  'Ignored'   :'☒',
-\  'Clean'     :'✔︎',
-\  'Unknown'   :'?',
-\}
 
 " Fuzzy file
 let g:fzf_action={
