@@ -115,15 +115,13 @@ _G.packer_plugins = {
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-colors.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/jonathan/.local/share/nvim/site/pack/packer/opt/lsp-colors.nvim",
+    loaded = true,
+    path = "/home/jonathan/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
     url = "https://github.com/folke/lsp-colors.nvim"
   },
   ["lsp_signature.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/jonathan/.local/share/nvim/site/pack/packer/opt/lsp_signature.nvim",
+    loaded = true,
+    path = "/home/jonathan/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspsaga.nvim"] = {
@@ -147,9 +145,8 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/jonathan/.local/share/nvim/site/pack/packer/opt/nvim-lsp-installer",
+    loaded = true,
+    path = "/home/jonathan/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
@@ -168,9 +165,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/jonathan/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/home/jonathan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -179,9 +175,8 @@ _G.packer_plugins = {
     url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/jonathan/.local/share/nvim/site/pack/packer/opt/playground",
+    loaded = true,
+    path = "/home/jonathan/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {

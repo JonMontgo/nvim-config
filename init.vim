@@ -1,25 +1,12 @@
 " Lua imports here
 :lua require('plugins')
 :lua require('lsp')
+:lua require('treesitter')
 :lua require('styling')
 :lua require('terminal')
 :lua require('indent-guide')
 :lua require('files')
 
-
-" Tree Sitter Config
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = { 
-    enable = true 
-  },
-  indent = {
-    enable = true
-  }
-}
-EOF
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 
 " Setup clipboard support
 

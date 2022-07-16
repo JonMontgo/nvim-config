@@ -20,14 +20,14 @@ return require('packer').startup(function()
   -- Nvim tree
   use {
     'kyazdani42/nvim-tree.lua', 
-    requires = {{ 'kyazdani42/nvim-web-devicons', opt = true }}
+    requires = {{ 'kyazdani42/nvim-web-devicons'}}
   }
 
   -- Global Syntax Highlighting
   use {
     'nvim-treesitter/nvim-treesitter', 
     run = ':TSUpdate',
-    requires = {{'nvim-treesitter/playground', opt = true}}
+    requires = {{'nvim-treesitter/playground'}}
   }
 
   -- GoLang
@@ -55,7 +55,7 @@ return require('packer').startup(function()
   use 'shaunsingh/nord.nvim'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = {'kyazdani42/nvim-web-devicons'}
   }
   use 'lukas-reineke/indent-blankline.nvim'
 
@@ -63,9 +63,9 @@ return require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig', 
     requires = {
-      {'williamboman/nvim-lsp-installer', opt = true},
-      {'ray-x/lsp_signature.nvim', opt = true},
-      {'folke/lsp-colors.nvim', opt = true},
+      {'williamboman/nvim-lsp-installer'},
+      {'ray-x/lsp_signature.nvim'},
+      {'folke/lsp-colors.nvim'},
       {'glepnir/lspsaga.nvim', branch = 'main'},
       {
         'hrsh7th/nvim-cmp',
