@@ -1,6 +1,7 @@
 " Lua imports here
 :lua require('plugins')
 :lua require('lsp')
+:lua require('styling')
 :lua require('terminal')
 :lua require('indent-guide')
 :lua require('files')
@@ -23,33 +24,6 @@ set foldexpr=nvim_treesitter#foldexpr()
 " Setup clipboard support
 
 set clipboard=unnamedplus
-
-" Setup colorscheme
-lua <<EOF
-vim.g.nord_disable_background = true
-require('nord').set()
-EOF
-" if (has("termguicolors"))
-"   set termguicolors
-" endif
-
-" Lualine
-lua << END
-require('lualine').setup {
-  options = {
-    theme = 'nord'
-  },
-  sections = {
-    lualine_c = {
-      {
-        'filename',
-        path = 1, -- Just patch this so that I get relative paths instead name
-
-      }
-    }
-  }
-}
-END
 
 " Ensure syntax highlighting
 syntax on
