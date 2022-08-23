@@ -4,10 +4,10 @@ local cmp = require'cmp'
 vim.api.nvim_command('set completeopt=menu,menuone,noselect')
 
 -- autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
-vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()")
-vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()")
-vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting()")
-vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()")
+-- vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()")
+-- vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()")
+-- vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting()")
+-- vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()")
 vim.api.nvim_command("autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting()")
 
 cmp.setup({

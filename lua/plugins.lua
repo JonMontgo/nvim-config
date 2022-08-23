@@ -63,7 +63,7 @@ return require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig', 
     requires = {
-      {'williamboman/nvim-lsp-installer'},
+      {'williamboman/mason.nvim'},
       {'ray-x/lsp_signature.nvim'},
       {'folke/lsp-colors.nvim'},
       {'glepnir/lspsaga.nvim', branch = 'main'},
