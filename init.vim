@@ -6,6 +6,7 @@
 :lua require('terminal')
 :lua require('indent-guide')
 :lua require('files')
+:lua require('database')
 
 
 " Setup clipboard support

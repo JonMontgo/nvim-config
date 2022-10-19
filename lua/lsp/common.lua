@@ -22,7 +22,7 @@ vim.keymap.set('n', '<space>ca', '<cmd> Lspsaga code_action<CR>', silent)
 vim.keymap.set("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", silent)
 
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 M.capabilities = capabilities
 
 

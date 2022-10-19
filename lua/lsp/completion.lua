@@ -36,6 +36,7 @@ cmp.setup({
     { name = 'vsnip' }, -- For vsnip users.
     { name = 'path' }, -- Path completion I miss you!
     { name = 'spell' },
+    { name = 'vim-dadbod-completion' },
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.

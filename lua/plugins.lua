@@ -39,8 +39,13 @@ return require('packer').startup(function()
   -- Terraform 
   use 'hashivim/vim-terraform'
 
+  -- Database
+use { 'tpope/vim-dadbod' }
+use { 'kristijanhusak/vim-dadbod-ui' }
+use { 'kristijanhusak/vim-dadbod-completion' }
+
   -- Terminal Toggles
-  use {'akinsho/toggleterm.nvim', tag = 'v1.*'}
+  use {'akinsho/toggleterm.nvim', tag = '*'}
 
   -- ETC
   use 'git@github.com:jiangmiao/auto-pairs.git' 
@@ -66,7 +71,10 @@ return require('packer').startup(function()
       {'williamboman/mason.nvim'},
       {'ray-x/lsp_signature.nvim'},
       {'folke/lsp-colors.nvim'},
-      {'glepnir/lspsaga.nvim', branch = 'main'},
+      {
+        'glepnir/lspsaga.nvim',
+        branch = 'main',
+      },
       {
         'hrsh7th/nvim-cmp',
         requires = {
