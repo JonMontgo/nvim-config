@@ -13,4 +13,4 @@ require('lspconfig')['eslint'].setup{
 }
 
 
-vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
+-- vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")
