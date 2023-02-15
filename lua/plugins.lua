@@ -74,6 +74,11 @@ use { 'kristijanhusak/vim-dadbod-completion' }
       {
         'glepnir/lspsaga.nvim',
         branch = 'main',
+        dependencies = {
+          {"nvim-tree/nvim-web-devicons"},
+          --Please make sure you install markdown and markdown_inline parser
+          {"nvim-treesitter/nvim-treesitter"}
+        }
       },
       {
         'hrsh7th/nvim-cmp',
