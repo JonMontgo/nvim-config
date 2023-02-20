@@ -1,8 +1,7 @@
 # NVim Config
 
 ## Description
-This nvim config has both my init.vim script and some settings for the coc
-autocompletion and linting image
+This is my nvim config... Now refactored with lua, lsp, treesitter and more
 
 ### Installation
 Before installing the config scripts you should already have 
