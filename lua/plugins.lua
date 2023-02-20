@@ -31,7 +31,7 @@ return require('packer').startup(function()
   }
 
   -- GoLang
-  use {'fatih/vim-go', run = ':GoUpdateBinaries'}
+  -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
 
   -- Solidity
   use 'tomlion/vim-solidity'
@@ -69,6 +69,7 @@ use { 'kristijanhusak/vim-dadbod-completion' }
     'neovim/nvim-lspconfig', 
     requires = {
       {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
       {'ray-x/lsp_signature.nvim'},
       {'folke/lsp-colors.nvim'},
       {
