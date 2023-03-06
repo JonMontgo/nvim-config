@@ -11,3 +11,7 @@ require('lspconfig')['emmet_ls'].setup{
   flags = common.lsp_flags,
   capabilities = common.capabilities
 }
+
+require("mason-lspconfig").setup{
+  ensure_installed = { "tailwindcss", "emmet_ls" }
+}

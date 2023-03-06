@@ -13,4 +13,7 @@ require('lspconfig')['eslint'].setup{
 }
 
 
+require("mason-lspconfig").setup{
+  ensure_installed = { "tsserver", "eslint" }
+}
 -- vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")

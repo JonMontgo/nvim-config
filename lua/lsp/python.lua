@@ -31,3 +31,8 @@ require('lspconfig').efm.setup {
     }
   }
 }
+
+
+require("mason-lspconfig").setup{
+  ensure_installed = { "pyright", "efm" }
+}
