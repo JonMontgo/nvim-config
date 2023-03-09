@@ -50,6 +50,7 @@ use { 'kristijanhusak/vim-dadbod-completion' }
   -- ETC
   use 'git@github.com:jiangmiao/auto-pairs.git' 
   use 'git@github.com:tpope/vim-surround.git'
+  use 'tpope/vim-sleuth'
   use 'tpope/vim-commentary'
   use 'git@github.com:wesQ3/vim-windowswap.git'
   use 'tpope/vim-fugitive'
