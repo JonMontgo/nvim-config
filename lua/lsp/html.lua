@@ -18,6 +18,12 @@ require('lspconfig')['cssls'].setup{
   capabilities = common.capabilities
 }
 
+require('lspconfig')['html'].setup{
+  on_attach = common.on_attach,
+  flags = common.lsp_flags,
+  capabilities = common.capabilities
+}
+
 require("mason-lspconfig").setup{
-  ensure_installed = { "tailwindcss", "emmet_ls", "cssls" }
+  ensure_installed = { "tailwindcss", "emmet_ls", "cssls", "html" }
 }
