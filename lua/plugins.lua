@@ -48,11 +48,11 @@ use { 'kristijanhusak/vim-dadbod-completion' }
   use {'akinsho/toggleterm.nvim', tag = '*'}
 
   -- ETC
-  use 'git@github.com:jiangmiao/auto-pairs.git' 
-  use 'git@github.com:tpope/vim-surround.git'
+  use 'jiangmiao/auto-pairs' 
+  use 'tpope/vim-surround'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-commentary'
-  use 'git@github.com:wesQ3/vim-windowswap.git'
+  use 'wesQ3/vim-windowswap'
   use 'tpope/vim-fugitive'
   use 'evanleck/vim-svelte'
   use 'godlygeek/tabular'
