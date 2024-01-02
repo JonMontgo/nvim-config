@@ -55,7 +55,7 @@ use { 'kristijanhusak/vim-dadbod-completion' }
   use 'wesQ3/vim-windowswap'
   use 'tpope/vim-fugitive'
   use 'evanleck/vim-svelte'
-  use 'godlygeek/tabular'
+  use 'junegunn/vim-easy-align'
 
   -- AESTHETICS
   use 'shaunsingh/nord.nvim'
