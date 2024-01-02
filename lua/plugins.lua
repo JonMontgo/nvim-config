@@ -23,6 +23,16 @@ return require('packer').startup(function()
     requires = {{ 'kyazdani42/nvim-web-devicons'}}
   }
 
+  -- ChatGPT
+  use({
+    "jackMort/ChatGPT.nvim",
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+  })
+
   -- Global Syntax Highlighting
   use {
     'nvim-treesitter/nvim-treesitter', 
@@ -40,9 +50,9 @@ return require('packer').startup(function()
   use 'hashivim/vim-terraform'
 
   -- Database
-use { 'tpope/vim-dadbod' }
-use { 'kristijanhusak/vim-dadbod-ui' }
-use { 'kristijanhusak/vim-dadbod-completion' }
+  use { 'tpope/vim-dadbod' }
+  use { 'kristijanhusak/vim-dadbod-ui' }
+  use { 'kristijanhusak/vim-dadbod-completion' }
 
   -- Terminal Toggles
   use {'akinsho/toggleterm.nvim', tag = '*'}
@@ -63,7 +73,14 @@ use { 'kristijanhusak/vim-dadbod-completion' }
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  use 'lukas-reineke/indent-blankline.nvim'
+  use { 'lukas-reineke/indent-blankline.nvim' }
+  use({
+    "giusgad/pets.nvim",
+    requires = {
+      "giusgad/hologram.nvim",
+      "MunifTanjim/nui.nvim",
+    }
+  })
 
   -- LSP
   use {

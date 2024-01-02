@@ -7,6 +7,7 @@
 :lua require('indent-guide')
 :lua require('files')
 :lua require('database')
+:lua require('gpt')
 
 
 " Setup clipboard support
