@@ -1,15 +1,9 @@
-local common = require('lsp/common')
-
+local completion = require('lsp/completion')
 require('lspconfig')['golangci_lint_ls'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
-
 require('lspconfig')['gopls'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require("mason-lspconfig").setup{

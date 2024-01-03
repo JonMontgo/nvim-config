@@ -1,19 +1,14 @@
-local common = require('lsp/common')
+local completion = require('lsp/completion')
 
 require('lspconfig')['pyright'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
-
 
 -- Setup lspconfig.
 
 require('lspconfig').efm.setup {
   filetypes = { 'python' },
-  on_attach = common.on_attach,
-  capabilities = common.capabilities,
-  flags = common.lsp_flags,
+  capabilities=completion.capabilities,
   init_options = { documentFormatting=true },
   settings = {
     rootMarkets = {".git/"},

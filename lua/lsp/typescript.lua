@@ -1,17 +1,12 @@
-local common = require('lsp/common')
+local completion = require('lsp/completion')
 
 require('lspconfig')['tsserver'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require('lspconfig')['eslint'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
-
 
 require("mason-lspconfig").setup{
   ensure_installed = { "tsserver", "eslint" }

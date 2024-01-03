@@ -1,9 +1,7 @@
-local common = require('lsp/common')
+local completion = require('lsp/completion')
 
-require('lspconfig')['angularls'].setup{
-  onAttach=common.onAttach
-  onAttach=common.lsp_flags,
-  capabilities=common.capabilities
+require('lspconfig')['angularls'].setup{  
+  capabilities=completion.capabilities
 }
 
 require("mason-lspconfig").setup{

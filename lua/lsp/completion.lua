@@ -1,5 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local M = {}
 
 vim.api.nvim_command('set completeopt=menu,menuone,noselect')
 
@@ -8,7 +9,7 @@ vim.api.nvim_command('set completeopt=menu,menuone,noselect')
 -- vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()")
 -- vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting()")
 -- vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()")
-vim.api.nvim_command("autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting()")
+-- vim.api.nvim_command("autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting()")
 
 cmp.setup({
   snippet = {
@@ -48,7 +49,7 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    { name = 'git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
     { name = 'buffer' },
   })
@@ -71,3 +72,6 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+
+M.capabilities = require('cmp_nvim_lsp').default_capabilities()
+return M

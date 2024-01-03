@@ -1,8 +1,8 @@
 " Lua imports here
+:lua require('styling')
 :lua require('plugins')
 :lua require('lsp')
 :lua require('treesitter')
-:lua require('styling')
 :lua require('terminal')
 :lua require('indent-guide')
 :lua require('files')

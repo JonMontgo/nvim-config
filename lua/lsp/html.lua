@@ -1,27 +1,19 @@
-local common = require('lsp/common')
+local completion = require('lsp/completion')
 
 require('lspconfig')['tailwindcss'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require('lspconfig')['emmet_ls'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require('lspconfig')['cssls'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require('lspconfig')['html'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
 
 require("mason-lspconfig").setup{

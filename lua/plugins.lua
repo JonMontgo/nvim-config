@@ -26,12 +26,15 @@ return require('packer').startup(function()
   -- ChatGPT
   use({
     "jackMort/ChatGPT.nvim",
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-  })
+    config = function()
+      require("chatgpt").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+})
 
   -- Global Syntax Highlighting
   use {
@@ -58,7 +61,12 @@ return require('packer').startup(function()
   use {'akinsho/toggleterm.nvim', tag = '*'}
 
   -- ETC
-  use 'jiangmiao/auto-pairs' 
+  use {
+    'windwp/nvim-autopairs',
+    config = function() 
+      require("nvim-autopairs").setup {}
+    end
+  } 
   use 'tpope/vim-surround'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-commentary'
@@ -68,7 +76,7 @@ return require('packer').startup(function()
   use 'junegunn/vim-easy-align'
 
   -- AESTHETICS
-  use 'shaunsingh/nord.nvim'
+  use 'EdenEast/nightfox.nvim'
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
@@ -81,6 +89,7 @@ return require('packer').startup(function()
       "MunifTanjim/nui.nvim",
     }
   })
+  use 'rcarriga/nvim-notify'
 
   -- LSP
   use {
@@ -111,6 +120,12 @@ return require('packer').startup(function()
           {'hrsh7th/vim-vsnip'}
         }
       }
+    }
+  }
+  use {
+    'nvimtools/none-ls.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
     }
   }
 end)

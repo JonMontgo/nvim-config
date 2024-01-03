@@ -1,7 +1,5 @@
-local common = require('lsp/common')
+local completion = require('lsp/completion')
 
 require('lspconfig')['denols'].setup{
-  on_attach = common.on_attach,
-  flags = common.lsp_flags,
-  capabilities = common.capabilities
+  capabilities=completion.capabilities
 }
