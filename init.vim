@@ -1,6 +1,6 @@
 " Lua imports here
-:lua require('styling')
 :lua require('plugins')
+:lua require('styling')
 :lua require('lsp')
 :lua require('treesitter')
 :lua require('terminal')
@@ -8,6 +8,7 @@
 :lua require('files')
 :lua require('database')
 :lua require('gpt')
+:lua require('notes')
 
 
 " Setup clipboard support
@@ -54,8 +55,8 @@ let g:fzf_action={
 \  'ctrl-i': 'split',
 \  'ctrl-s': 'vsplit'
 \}
-map <leader>ff :Files<CR>
-map <leader>gff :GFiles<CR>
+" map <leader>ff :Files<CR>
+" map <leader>gff :GFiles<CR>
 map <leader>sff :Files src<CR>
 
 " Easy Split Movements

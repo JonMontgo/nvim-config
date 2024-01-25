@@ -52,10 +52,22 @@ return require('packer').startup(function()
   -- Terraform 
   use 'hashivim/vim-terraform'
 
+  -- Python
+  use 'Vimjas/vim-python-pep8-indent'
+
   -- Database
   use { 'tpope/vim-dadbod' }
   use { 'kristijanhusak/vim-dadbod-ui' }
   use { 'kristijanhusak/vim-dadbod-completion' }
+
+  -- Notes
+  use {
+    "epwalsh/obsidian.nvim",
+    tags="*",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
 
   -- Terminal Toggles
   use {'akinsho/toggleterm.nvim', tag = '*'}
@@ -89,7 +101,14 @@ return require('packer').startup(function()
       "MunifTanjim/nui.nvim",
     }
   })
-  use 'rcarriga/nvim-notify'
+  use {
+    'rcarriga/nvim-notify',
+    config = function()
+      require('notify').setup({
+        background_colour = "#000000"
+      })
+    end
+  }
 
   -- LSP
   use {

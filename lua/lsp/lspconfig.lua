@@ -1,4 +1,6 @@
 local lspconfig = require('lspconfig')
+local lspsaga = require('lspsaga')
+local notify = require('notify')
 
 -- Saga mappings
 vim.keymap.set('n', '<space>e', "<cmd>Lspsaga show_line_diagnostics<CR>", silent)
@@ -13,12 +15,12 @@ vim.keymap.set('n', '<space>rn', '<cmd> Lspsaga rename<CR>', silent)
 vim.keymap.set('n', '<space>ca', '<cmd> Lspsaga code_action<CR>', silent)
 vim.keymap.set("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", silent)
 
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
+    notify(vim.lsp.get_client_by_id(ev.data.client_id).name .. ' attaching to buffer ' .. ev.buf)
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -52,3 +54,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 
 })
+
