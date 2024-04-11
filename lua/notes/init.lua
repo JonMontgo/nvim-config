@@ -7,3 +7,4 @@ obsidian.setup{
     },
   },
 }
+vim.opt_local.conceallevel = 1
