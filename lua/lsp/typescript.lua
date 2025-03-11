@@ -1,6 +1,6 @@
 local completion = require('lsp/completion')
 
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['ts_ls'].setup{
   capabilities=completion.capabilities
 }
 
