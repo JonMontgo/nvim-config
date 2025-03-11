@@ -20,7 +20,6 @@ vim.keymap.set("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", sile
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    notify(vim.lsp.get_client_by_id(ev.data.client_id).name .. ' attaching to buffer ' .. ev.buf)
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
