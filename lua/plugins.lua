@@ -1,147 +1,113 @@
-return require('packer').startup(function()
-  -- Manage packer with packer... neat trick
-  use 'wbthomason/packer.nvim'
-
-  -- FZF
-  use {
+local plugins = {
+  {
     'junegunn/fzf',
-    run = function() 
-      vim.fn['fzf#install']() 
-    end,
-    requires = {'junegunn/fzf.vim'}  
-  }
-
-  -- Telescope
-  use {
+    build = function() vim.fn['fzf#install']() end,
+    dependencies = { 'junegunn/fzf.vim' },
+  },
+  {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}}
-  }
-
-  -- Nvim tree
-  use {
-    'kyazdani42/nvim-tree.lua', 
-    requires = {{ 'kyazdani42/nvim-web-devicons'}}
-  }
-
-  -- ChatGPT
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-})
-
-  -- Global Syntax Highlighting
-  use {
-    'nvim-treesitter/nvim-treesitter', 
-    run = ':TSUpdate',
-    requires = {{'nvim-treesitter/playground'}}
-  }
-
-  -- GoLang
-  -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
-
-  -- Solidity
-  use 'tomlion/vim-solidity'
-
-  -- Terraform 
-  use 'hashivim/vim-terraform'
-
-  -- Python
-  use 'Vimjas/vim-python-pep8-indent'
-
-  -- Database
-  use { 'tpope/vim-dadbod' }
-  use { 'kristijanhusak/vim-dadbod-ui' }
-  use { 'kristijanhusak/vim-dadbod-completion' }
-
-  -- Notes
-  use {
-    "epwalsh/obsidian.nvim",
-    tags="*",
-    requires = {
-      "nvim-lua/plenary.nvim",
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  {
+    'kyazdani42/nvim-tree.lua',
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
+  {
+    'jackMort/ChatGPT.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
     },
-  }
-
-  -- Terminal Toggles
-  use {'akinsho/toggleterm.nvim', tag = '*'}
-
-  -- ETC
-  use {
+    config = function()
+      require('chatgpt').setup()
+    end,
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    dependencies = { 'nvim-treesitter/playground' },
+  },
+  'tomlion/vim-solidity',
+  'hashivim/vim-terraform',
+  'Vimjas/vim-python-pep8-indent',
+  'tpope/vim-dadbod',
+  'kristijanhusak/vim-dadbod-ui',
+  'kristijanhusak/vim-dadbod-completion',
+  {
+    'epwalsh/obsidian.nvim',
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+  },
+  {
     'windwp/nvim-autopairs',
-    config = function() 
-      require("nvim-autopairs").setup {}
-    end
-  } 
-  use 'tpope/vim-surround'
-  use 'tpope/vim-sleuth'
-  use 'tpope/vim-commentary'
-  use 'wesQ3/vim-windowswap'
-  use 'tpope/vim-fugitive'
-  use 'evanleck/vim-svelte'
-  use 'junegunn/vim-easy-align'
-
-  -- AESTHETICS
-  use 'EdenEast/nightfox.nvim'
-  use {
+    config = function()
+      require('nvim-autopairs').setup {}
+    end,
+  },
+  'tpope/vim-surround',
+  'tpope/vim-sleuth',
+  'tpope/vim-commentary',
+  'wesQ3/vim-windowswap',
+  'tpope/vim-fugitive',
+  'evanleck/vim-svelte',
+  'junegunn/vim-easy-align',
+  'EdenEast/nightfox.nvim',
+  {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  use { 'lukas-reineke/indent-blankline.nvim' }
-  use({
-    "giusgad/pets.nvim",
-    requires = {
-      "giusgad/hologram.nvim",
-      "MunifTanjim/nui.nvim",
-    }
-  })
-  use {
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
+  'lukas-reineke/indent-blankline.nvim',
+  {
+    'giusgad/pets.nvim',
+    dependencies = {
+      'giusgad/hologram.nvim',
+      'MunifTanjim/nui.nvim',
+    },
+  },
+  {
     'rcarriga/nvim-notify',
     config = function()
-      require('notify').setup({
-        background_colour = "#000000"
-      })
-    end
-  }
-
-  -- LSP
-  use {
-    'neovim/nvim-lspconfig', 
-    requires = {
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-      {'ray-x/lsp_signature.nvim'},
-      {'folke/lsp-colors.nvim'},
+      require('notify').setup {
+        merge_duplicates = true,
+        background_colour = '#000000',
+      }
+    end,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'ray-x/lsp_signature.nvim',
+      'folke/lsp-colors.nvim',
       {
         'glepnir/lspsaga.nvim',
         branch = 'main',
         dependencies = {
-          {"nvim-tree/nvim-web-devicons"},
-          --Please make sure you install markdown and markdown_inline parser
-          {"nvim-treesitter/nvim-treesitter"}
-        }
+          'nvim-tree/nvim-web-devicons',
+          'nvim-treesitter/nvim-treesitter',
+        },
       },
       {
         'hrsh7th/nvim-cmp',
-        requires = {
-          {'hrsh7th/cmp-nvim-lsp'},
-          {'hrsh7th/cmp-buffer'},
-          {'hrsh7th/cmp-path'},
-          {'hrsh7th/cmp-cmdline'},
-          -- For vsnip users.
-          {'hrsh7th/cmp-vsnip'},
-          {'hrsh7th/vim-vsnip'}
-        }
-      }
-    }
-  }
-  use "folke/lazydev.nvim"
-  use "stevearc/conform.nvim"
-  
-end)
+        dependencies = {
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-path',
+          'hrsh7th/cmp-cmdline',
+          'hrsh7th/cmp-vsnip',
+          'hrsh7th/vim-vsnip',
+        },
+      },
+    },
+  },
+  'folke/lazydev.nvim',
+  'stevearc/conform.nvim',
+}
+
+require('lazy').setup(plugins)
