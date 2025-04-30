@@ -12,3 +12,4 @@ Finally to install the config use
 ```sh
 mkdir -p ~/.config/nvim
 git clone git@github.com:JonMontgo/nvim-config.git ~/.config/nvim
+```
