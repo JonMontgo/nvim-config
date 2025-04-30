@@ -13,7 +13,7 @@ require('lspconfig')['biome'].setup{
 }
 
 require("mason-lspconfig").setup{
-  ensure_installed = { "tsserver", "eslint", "biome" }
+  ensure_installed = { "ts_ls", "eslint", "biome" }
 }
 
 -- vim.api.nvim_command("autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll")

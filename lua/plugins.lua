@@ -141,10 +141,7 @@ return require('packer').startup(function()
       }
     }
   }
-  use {
-    'nvimtools/none-ls.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    }
-  }
+  use "folke/lazydev.nvim"
+  use "stevearc/conform.nvim"
+  
 end)
