@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  auto_install = {
+  ensure_installed = {
     "c",
     "lua",
     "rust",
@@ -14,7 +14,6 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
-    disable = { "python" }
   }
 }
 

@@ -1,6 +1,6 @@
--- init.lua - Neovim configuration in Lua
 -- Load plugin and configuration modules
 require('bootstrap')
+require("notify-bootstrap")
 require('plugins')
 require('styling')
 require('lsp')
