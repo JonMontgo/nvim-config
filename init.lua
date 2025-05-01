@@ -9,8 +9,8 @@ require('terminal')
 require('indent-guide')
 require('files')
 require('database')
-require('gpt')
 require('notes')
+require('ai')
 
 -- Options
 local opt = vim.opt
