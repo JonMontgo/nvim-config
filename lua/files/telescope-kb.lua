@@ -5,3 +5,6 @@ vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fr", builtin.live_grep, {}) -- ripgrep this
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fgl", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fsf", function() builtin.find_files { cwd = "src" } end, {})
+vim.keymap.set("n", "<leader>fws", builtin.lsp_workspace_symbols, {})
+vim.keymap.set("n", "<leader>fds", builtin.lsp_document_symbols, {})

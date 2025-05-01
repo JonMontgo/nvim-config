@@ -1,6 +1,5 @@
 -- Load plugin and configuration modules
 require('bootstrap')
-require("notify-bootstrap")
 require('plugins')
 require('styling')
 require('lsp')
@@ -42,18 +41,8 @@ vim.cmd("syntax on")
 opt.foldcolumn = "2"
 opt.foldlevelstart = 99
 
--- FZF actions
-vim.g.fzf_action = {
-  ["ctrl-t"] = "tab split",
-  ["ctrl-i"] = "split",
-  ["ctrl-s"] = "vsplit",
-}
-
 -- Key mappings
 local map = vim.keymap.set
-
--- Fuzzy finder mapping
-map('n', '<leader>sff', ':Files src<CR>', { silent = true })
 
 -- Easy split movements
 map('n', '<C-J>', '<C-W><C-J>', { noremap = true, silent = true })

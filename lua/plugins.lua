@@ -28,7 +28,6 @@ local plugins = {
       "echasnovski/mini.pick", -- for file_selector provider mini.pick
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-      "ibhagwan/fzf-lua", -- for file_selector provider fzf
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       "zbirenbaum/copilot.lua", -- for providers='copilot'
       {
@@ -57,17 +56,6 @@ local plugins = {
         ft = { "markdown", "Avante" },
       },
     },
-  },
-  {
-    'jackMort/ChatGPT.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-    },
-    config = function()
-      require('chatgpt').setup()
-    end,
   },
   {
     'nvim-treesitter/nvim-treesitter',
@@ -111,10 +99,12 @@ local plugins = {
   {
     'rcarriga/nvim-notify',
     config = function()
-      require('notify').setup {
+      local notify = require('notify')
+      notify.setup {
         merge_duplicates = true,
         background_colour = '#000000',
       }
+      vim.notify = notify
     end,
   },
   {
