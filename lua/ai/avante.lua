@@ -1,5 +1,5 @@
 require("avante").setup {
-  provider = "gemini",
+  provider = "openai",
   ollama = {
     model = "deepseek-r1:14b",
   },
