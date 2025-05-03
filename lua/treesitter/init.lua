@@ -7,8 +7,12 @@ require'nvim-treesitter.configs'.setup {
     "python",
     "tsx",
     "typescript",
-    "dockerfile"
+    "dockerfile",
+    "json",
+    "json5",
+    "yaml"
   },
+  auto_install=true,
   highlight = { 
     enable = true 
   },
