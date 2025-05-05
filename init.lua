@@ -1,15 +1,5 @@
 -- Load plugin and configuration modules
-require('bootstrap')
-require('plugins')
-require('styling')
-require('lsp')
-require('treesitter')
-require('terminal')
-require('indent-guide')
-require('files')
-require('database')
-require('notes')
-require('ai')
+require('config.lazy')
 
 -- Options
 local opt = vim.opt
