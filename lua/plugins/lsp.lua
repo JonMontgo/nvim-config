@@ -11,7 +11,6 @@ return {
     },
     config = function()
       local lsp_cfg = require("lspconfig")
-      local mason_lsp = require("mason-lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local tele = require("telescope.builtin")
       local hover = require("hover")
@@ -31,7 +30,7 @@ return {
             }
           }, ev.buf)
 
-          local opts = { buffer = ev.buffer }
+          local opts = {}
 
           -- lsp jumps.
           vim.keymap.set('n', 'gdc', vim.lsp.buf.declaration, opts)
@@ -40,8 +39,8 @@ return {
           vim.keymap.set('n', 'gt', tele.lsp_type_definitions, opts)
           vim.keymap.set('n', 'gs', tele.lsp_document_symbols, opts)
           vim.keymap.set('n', 'gws', tele.lsp_workspace_symbols, opts)
-          vim.keymap.set('n', '[d]', vim.diagnostic.get_next, opts)
-          vim.keymap.set('n', ']d]', vim.diagnostic.get_prev, opts)
+          -- vim.keymap.set('n', ']d', vim.diagnostic.get_next, opts)
+          -- vim.keymap.set('n', '[d', vim.diagnostic.get_prev, opts)
 
           -- preview
           -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

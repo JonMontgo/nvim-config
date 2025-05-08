@@ -18,8 +18,8 @@ return {
       vim.keymap.set('n', '<space>o', "<cmd>Lspsaga outline<cr>", silent)
       -- vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<cr>')
       -- vim.keymap.set('n', 'gt', '<cmd>Lspsaga goto_type_definition<cr>')
-      -- vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_next<cr>", silent)
-      -- vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<cr>", silent)
+      vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_next<cr>", silent)
+      vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<cr>", silent)
       -- vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', silent) this broke... idk why
       -- vim.keymap.set('n', '<space>rn', '<cmd> Lspsaga rename<cr>', silent)
       -- vim.keymap.set('n', '<space>ca', '<cmd> Lspsaga code_action<cr>', silent)
