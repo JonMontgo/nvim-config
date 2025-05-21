@@ -1,9 +1,13 @@
 return {
   'hashivim/vim-terraform',
-  'Vimjas/vim-python-pep8-indent',
+  -- 'Vimjas/vim-python-pep8-indent',
   {
     'folke/lazydev.nvim',
     ft = "lua",
-    opts = true
+    opts = {
+      library = {
+        vim.fn.stdpath("config") .. "/lua/customplugins/present"
+      }
+    },
   }
 }

@@ -46,7 +46,7 @@ return {
         merge_duplicates = true,
         background_colour = '#000000',
       }
-      vim.notify = require("notify")
+      vim.notify = notify
     end
   },
 }
