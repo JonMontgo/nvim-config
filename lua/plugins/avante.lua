@@ -6,20 +6,24 @@ return {
     build = "make",
     opts = {
       provider = "gemini",
-      ollama = {
-        model = "deepseek-r1:14b",
-      },
-      gemini = {
-        model = "gemini-2.5-flash-preview-04-17",
-      },
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o",             -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000,              -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-      },
+      providers = {
+        ollama = {
+          model = "deepseek-r1:14b",
+        },
+        gemini = {
+          model = "gemini-2.5-flash-preview-04-17",
+        },
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o",
+          timeout = 30000,
+          extra_requrest_body = {
+            temperature = 0.75,
+            max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+            --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+          },
+        }
+      }
     },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",

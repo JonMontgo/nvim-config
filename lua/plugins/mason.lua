@@ -33,6 +33,7 @@ return {
       ensure_installed = {
         "prettier",
         "stylua",    -- lua formatter
+        "remark-language-server",
         "markdownlint"
       },
     })

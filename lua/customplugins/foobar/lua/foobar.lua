@@ -7,6 +7,7 @@ end
 
 function M.setup()
   -- vim.notify("Loaded plugin!", vim.log.levels.INFO, { title = "foobar" })
+
   vim.api.nvim_create_user_command('HelloWorld', M.hello_world, {})
 end
 
