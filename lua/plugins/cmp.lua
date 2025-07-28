@@ -38,6 +38,7 @@ return {
             { name = 'spell' },
             { name = 'vim-dadbod-completion' },
             { name = 'buffer' },
+            { name = 'path' }
           },
           {
             {name = 'buffer'} -- just buffer fallback

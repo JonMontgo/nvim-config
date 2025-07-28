@@ -5,17 +5,18 @@ return {
     version = false, -- Never set this value to "*"! Never!
     build = "make",
     opts = {
-      provider = "gemini",
+      provider = "openai",
       providers = {
         ollama = {
           model = "deepseek-r1:14b",
         },
         gemini = {
-          model = "gemini-2.5-flash-preview-04-17",
+          model = "gemini-2.5-flash-lite-preview-06-17",
         },
         openai = {
           endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o",
+          -- model = "gpt-4o",
+          model = "o4-mini",
           timeout = 30000,
           extra_requrest_body = {
             temperature = 0.75,
@@ -35,6 +36,7 @@ return {
       "hrsh7th/nvim-cmp",
       "nvim-tree/nvim-web-devicons",
       "zbirenbaum/copilot.lua",
+      "MeanderingProgrammer/render-markdown.nvim",
       {
         "HakonHarnes/img-clip.nvim",
         event = "VeryLazy",
@@ -48,13 +50,6 @@ return {
             use_absolute_path = true,
           },
         },
-      },
-      {
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
       },
     },
   },

@@ -64,11 +64,11 @@ return {
               client.stop()
             end
           elseif lsp_cfg.util.root_pattern("tsconfig.json")(vim.fn.getcwd()) then
-            if client.name == "denols" then 
+            if client.name == "denols" then
               client.stop()
             end
           end
-          if not lsp_cfg.util.root_pattern(".eslintrc", "eslint.config.js", "eslint.config.ts")(vim.fn.getcwd()) then
+          if not lsp_cfg.util.root_pattern(".eslintrc", "eslint.config.js", "eslint.config.ts", "eslint.config.mjs")(vim.fn.getcwd()) then
             if client.name == "eslint" then
               client.stop()
             end

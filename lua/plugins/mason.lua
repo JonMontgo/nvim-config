@@ -21,7 +21,7 @@ return {
         "emmet_ls",
         "cssls",
         "ts_ls",
-        -- "eslint", It won't shutup... I don't know why
+        "eslint", -- It won't shutup... I don't know why
         "biome",
         "html",
         "jsonls",

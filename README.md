@@ -15,6 +15,7 @@ git clone git@github.com:JonMontgo/nvim-config.git ~/.config/nvim
 
 ## Features
 - **Fuzzy Finder**: Quickly find files and navigate your project with FZF and Telescope.
+- **Vibe Coding Support**: Enhance coding workflow with Vibe integration.
 - **File Explorer**: Easily browse your file system with nvim-tree.
 - **Language Support**: Comprehensive support for multiple languages including Python, Go, TypeScript, and more.
 - **LSP and Autocompletion**: Integrated language server protocol support and autocompletion with nvim-cmp.
@@ -29,6 +30,7 @@ git clone git@github.com:JonMontgo/nvim-config.git ~/.config/nvim
 - **LSP and Autocompletion**: `nvim-lspconfig`, `mason.nvim`, `nvim-cmp`
 - **Treesitter**: `nvim-treesitter`
 - **Terminal Integration**: `toggleterm.nvim`
+- **AI Assistance**: `avante.nvim`
 - **Note-taking**: `obsidian.nvim`
 - **Text Editing Enhancements**: `vim-surround`, `vim-sleuth`, `Comment.nvim`
 - **Themes and UI**: `nightfox.nvim`, `lualine.nvim`, `indent-blankline.nvim`
