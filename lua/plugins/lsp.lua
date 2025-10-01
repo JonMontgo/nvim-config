@@ -10,10 +10,20 @@ return {
       'hrsh7th/nvim-cmp',
     },
     config = function()
-      local lsp_cfg = require("lspconfig")
+      local lsp_util = require("lspconfig.util")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local tele = require("telescope.builtin")
       local hover = require("hover")
+
+      vim.lsp.enable('gdscript')
+      vim.lsp.config("*", { capabilities = capabilities })
+      vim.lsp.config("pyright", {
+        settings = {
+          pyright = {
+            disableOrganizeImports = true, -- Using ruff
+          }
+        }
+      })
 
       vim.api.nvim_create_autocmd('lspattach', {
         group = vim.api.nvim_create_augroup('userlspconfig', {}),
@@ -44,7 +54,7 @@ return {
 
           -- preview
           -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "K", hover.hover, opts)
+          vim.keymap.set("n", "K", hover.open, opts)
 
           -- workspace modifications
           vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -58,36 +68,27 @@ return {
           vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
 
 
+
           -- Stop servers running in projects not supposed to
-          if lsp_cfg.util.root_pattern("deno.json", "deno.jsonrc")(vim.fn.getcwd()) then
+          if lsp_util.root_pattern("deno.json", "deno.jsonrc")(vim.fn.getcwd()) then
             if client.name == "ts_ls" then
-              client.stop()
+              client:stop()
             end
-          elseif lsp_cfg.util.root_pattern("tsconfig.json")(vim.fn.getcwd()) then
+          elseif lsp_util.root_pattern("tsconfig.json")(vim.fn.getcwd()) then
             if client.name == "denols" then
-              client.stop()
+              client:stop()
             end
           end
-          if not lsp_cfg.util.root_pattern(".eslintrc", "eslint.config.js", "eslint.config.ts", "eslint.config.mjs")(vim.fn.getcwd()) then
+          if not lsp_util.root_pattern(".eslintrc", "eslint.config.js", "eslint.config.ts", "eslint.config.mjs")(vim.fn.getcwd()) then
             if client.name == "eslint" then
-              client.stop()
+              client:stop()
             end
           end
         end,
       })
 
-      vim.lsp.config("*", { capabilities = capabilities })
-      vim.lsp.config("pyright", {
-        settings = {
-          pyright = {
-            disableOrganizeImports = true, -- Using ruff
-          }
-        }
-      })
 
-      require('lspconfig')['gdscript'].setup {
-        capabilities = capabilities
-      }
+
     end
   }
 }
