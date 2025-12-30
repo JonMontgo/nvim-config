@@ -24,6 +24,13 @@ return {
           }
         }
       })
+      vim.lsp.config("remark_ls", {
+        settings = {
+          remark = {
+            requireConfig=true,
+          }
+        }
+      })
 
       vim.api.nvim_create_autocmd('lspattach', {
         group = vim.api.nvim_create_augroup('userlspconfig', {}),
