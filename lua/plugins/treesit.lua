@@ -3,6 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     dependencies = { 'nvim-treesitter/playground' },
+    lazy=false,
     config = function ()
       vim.opt.foldmethod='expr'
       vim.opt.foldexpr='nvim_treesitter#foldexpr()'
