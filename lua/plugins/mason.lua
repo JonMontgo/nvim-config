@@ -34,7 +34,8 @@ return {
         "prettier",
         "stylua",    -- lua formatter
         "remark-language-server",
-        "markdownlint"
+        "markdownlint",
+        "golangci-lint",
       },
     })
   end,
