@@ -38,15 +38,15 @@ return {
         end
       end
       try_install(5)
-      vim.wo[0][0].foldmethod='expr'
-      vim.wo[0][0].foldexpr='v:lua.vim.treesitter.foldexpr()'
-      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {'*'},
         callback = function(args)
           if not pcall(vim.treesitter.start) then
             vim.bo[args.buf].syntax = 'on'
           end
+          vim.wo.foldmethod = 'expr'
+          vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end,
       })
     end
