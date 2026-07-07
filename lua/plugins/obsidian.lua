@@ -22,7 +22,12 @@ return {
           },
         },
       }
-      vim.opt_local.conceallevel = 1
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'markdown',
+        callback = function()
+          vim.opt_local.conceallevel = 1
+        end,
+      })
     end
   }
 }
