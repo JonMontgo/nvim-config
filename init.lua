@@ -19,7 +19,7 @@ opt.number = true
 opt.expandtab = true
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.tabstop = 4
+opt.tabstop = 2
 
 -- Color column at 88 chars
 opt.colorcolumn = "88"
